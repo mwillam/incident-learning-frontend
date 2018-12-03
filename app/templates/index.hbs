@@ -1,0 +1,133 @@
+<div class="jumbotron text-center">
+    <h1>{{headerMessage}}</h1>
+
+    <br/><br/>
+
+
+    <div class="form form-group form-group-lg row">
+
+        <div class="col-xs-4 col-xs-offset-2">
+            <p>Reporter information</p>
+            <div class="form-group row">
+                <label for="reporterName" class="col-xs-4 col-form-label">Your name</label>
+
+                <div class="col-xs-5">
+                    {{input type="text" value=reporterName class="form-control" placeholder="Your name" autofocus="autofocus" id="reporterName"}}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="reporterProfession" class="col-xs-4 col-form-label">Your profession</label>
+
+                <div class="col-xs-5">
+                    {{input type="text" value=reporterProfession class="form-control" placeholder="Physician/MTA/Nurse/Physicist" id="reporterProfession"}}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <p>Optional patient statistics</p>
+            <div class="form-group row">
+                <label for="patientAge" class="col-xs-4 col-form-label">Patient age</label>
+
+                <div class="col-xs-5">
+                    {{input type="number" min="0" value=patientAge class="form-control" placeholder="Patient age" id="patientAge"}}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="patientSex" class="col-xs-4 col-form-label">Patient sex</label>
+
+                <div class="col-xs-2 form-check form-check-inline">
+                        {{input class="form-check-input" type="radio" name="sexes" id="sexW" value=patientSexW}}
+                        <label class="form-check-label" for="sexW">
+                            w
+                        </label>
+                    </div>
+                <div class="col-xs-2 form-check form-check-inline">
+                    {{input class="form-check-input" type="radio" name="sexes" id="sexM" value=patientSexM}}
+                    <label class="form-check-label" for="sexM">
+                        m
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form form-group form-group-lg row">
+        <div class="col-xs-4 col-xs-offset-2">
+            <label for="task" class="col-xs-4 col-form-label">What task were you working on?</label>
+
+            <div class="col-xs-6">
+                {{input type="text" value=task class="form-control" placeholder="Task" id="task"}}
+            </div>
+            <label for="context" class="col-xs-4 col-form-label">In what context did the incident occur?</label>
+
+            <div class="col-xs-6">
+                {{input type="text" value=context class="form-control" placeholder="Context" id="context"}}
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="form-group row">
+                <label for="patientHarmed" class="col-xs-4 col-form-label">Was the patient harmed?</label>
+
+                <div class="col-xs-5">
+                    {{input type="range" min="0" max="10" class="custom-range" id="patientHarmed" value =patientHarmed}}
+                </div>
+                <div class="col-xs-2">
+                    {{input type="number" min="0" max="10" class="form-control-plaintext" value=patientHarmed}}
+                </div>
+            </div>
+            <label for="patientHarmed" class="col-xs-12 col-form-label">0 if no harm, 10 if patient died</label>
+
+            <div class="form-group row">
+                <label for="occurrence" class="col-xs-4 col-form-label">How often does this occur?</label>
+
+                <div class="col-xs-5">
+                    {{input type="range" min="0" max="10" class="custom-range" id="occurrence" value=occurrence}}
+                </div>
+                <div class="col-xs-2">
+                    {{input type="number" min="0" max="10" class="form-control-plaintext" value=occurrence}}
+                </div>
+            </div>
+            <label for="occurrence" class="col-xs-12 col-form-label">0 if never happened before, 10 if multiple times a day</label>
+
+        </div>
+
+    </div>
+
+
+    <div class="form-row">
+        <div class="col-xs-8">
+            <p>Report</p>
+        </div>
+    </div>
+    <div class="form form-group form-group-lg row">
+        <div class="col-xs-5 col-xs-offset-2">
+            <label for="textWhatHappened" class="col-xs-4 col-form-label">What happened?</label>
+            {{textarea class="form-control" id="textWhatHappened" placeholder="Please describe what happened in detail." rows="7" value=textWhatHappened}}
+        </div>
+    </div>
+    <div class="form form-group form-group-lg row">
+        <div class="col-xs-5 col-xs-offset-2">
+            <label for="textSituationNow" class="col-xs-4 col-form-label">What is the situation now?</label>
+            {{textarea class="form-control" id="textSituationNow" placeholder="Describe the situation after the incident." rows="7" value=textSituationNow}}
+        </div>
+    </div>
+    <div class="form form-group form-group-lg row">
+        <div class="col-xs-5 col-xs-offset-2">
+            <label for="textHowToPrevent" class="col-xs-12 col-form-label">If you can, please give a suggestion on how to prevent incidents like this.</label>
+            {{textarea class="form-control" id="textHowToPrevent" placeholder="Tipps on how to prevent this" rows="5" value=textHowToPrevent}}
+        </div>
+    </div>
+
+    <div class="form row">
+        <div class="col-xs-4 col-xs-offset-4">
+            <button class="btn btn-primary btn-lg btn-block" disabled={{isDisabled}} {{action 'sendReport'}}>Send report</button>
+        </div>
+    </div>
+
+    {{#if responseMessage}}
+        <div class="alert alert-success">{{responseMessage}}</div>
+    {{/if}}
+
+    <br/><br/>
+</div>
