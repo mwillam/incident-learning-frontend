@@ -1,12 +1,9 @@
 <div class="jumbotron text-center">
     <h1>{{headerMessage}}</h1>
 
-    <br/><br/>
-
-
     <div class="form form-group form-group-lg row">
 
-        <div class="col-xs-4 col-xs-offset-2">
+        <div class="col-xs-6">
             <p>Reporter information</p>
             <div class="form-group row">
                 <label for="reporterName" class="col-xs-4 col-form-label">Your name</label>
@@ -24,7 +21,7 @@
             </div>
         </div>
 
-        <div class="col-xs-4">
+        <div class="col-xs-6">
             <p>Optional patient statistics</p>
             <div class="form-group row">
                 <label for="patientAge" class="col-xs-4 col-form-label">Patient age</label>
@@ -53,7 +50,7 @@
     </div>
 
     <div class="form form-group form-group-lg row">
-        <div class="col-xs-4 col-xs-offset-2">
+        <div class="col-xs-6">
             <label for="task" class="col-xs-4 col-form-label">What task were you working on?</label>
 
             <div class="col-xs-6">
@@ -65,7 +62,7 @@
                 {{input type="text" value=context class="form-control" placeholder="Context" id="context"}}
             </div>
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-6">
             <div class="form-group row">
                 <label for="patientHarmed" class="col-xs-4 col-form-label">Was the patient harmed?</label>
 
@@ -101,7 +98,7 @@
         </div>
     </div>
     <div class="form form-group form-group-lg row">
-        <div class="col-xs-5 col-xs-offset-2">
+        <div class="col-xs-6">
             <label for="textWhatHappened" class="col-xs-4 col-form-label">What happened?</label>
             {{textarea class="form-control" id="textWhatHappened" placeholder="Please describe what happened in detail." rows="7" value=textWhatHappened}}
         </div>
@@ -129,5 +126,4 @@
         <div class="alert alert-success">{{responseMessage}}</div>
     {{/if}}
 
-    <br/><br/>
 </div>

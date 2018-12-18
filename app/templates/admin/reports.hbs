@@ -1,0 +1,20 @@
+<h1>Reports</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>date</th>
+        <th>id</th>
+        <th>textWhatHappened</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each model as |report|}}
+        <tr>
+            <th>{{report.date}}</th>
+            <th>{{report.id}}</th>
+            <td>{{report.textWhatHappened}}</td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>

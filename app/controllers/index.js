@@ -43,7 +43,7 @@ export default Controller.extend({
                 textHowToPrevent: this.get('textHowToPrevent'),
                 context: this.get('context'),
             });
-            newReport.save().then(function () {
+            newReport.save().then(response => {
                     this.set('responseMessage', `Thank you, we saved your report, ${this.get('reporterName')}`);
                     this.clearFields();
             });
